@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <string>
 #include <vector>
 
@@ -12,7 +13,7 @@ namespace http_utils {
 			/*! Get a vector with each of the cookies in the Cookie
 			 * request header.
 			 */
-			std::vector<std::string> get_cookies(std::string cookie);
+			std::map<std::string, std::string> get_cookies(std::string cookie);
 	};
 
 }
