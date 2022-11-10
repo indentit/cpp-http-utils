@@ -1,0 +1,3 @@
+[submodule "cpp-string-utils"]
+	path = cpp-string-utils
+	url = github_indentit:indentit/cpp-string-utils.git

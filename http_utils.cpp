@@ -1,7 +1,10 @@
 #include "http_utils.h"
+#include <string>
 #include <vector>
+#include "string_utils.h"
 
 using namespace http_utils;
+using namespace string_utils;
 
 /*!
  * Extracts each cookie, encapsulated in the HTTP request header Cookie
@@ -11,8 +14,10 @@ using namespace http_utils;
  */
 std::vector<std::string> HttpUtils::get_cookies(std::string cookie)
 {
-	std::vector<std::string> cookies;
+	StringUtils str_utils;
 
-
+	std::vector<std::string> cookies = str_utils.split(cookie, ';');
+	
+	
 	return cookies;
 }
