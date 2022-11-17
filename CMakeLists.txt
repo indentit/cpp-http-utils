@@ -9,6 +9,7 @@ target_include_directories(http_utils PUBLIC
 	)
 
 add_executable(http_utils_test test/main.cpp)
+add_subdirectory(cpp-string-utils)
 target_link_libraries(http_utils_test PRIVATE 
 	http_utils
 	string_utils

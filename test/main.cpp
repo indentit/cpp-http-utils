@@ -29,6 +29,12 @@ int main(void)
 	cookies = http_utils.get_cookies(cookie4);
 	std::cout << "session_token=" << cookies["session_token"] << "\n";
 	std::cout << "session_token2=" << cookies["session_token2"] << "\n";
+
+
+	std::string body = "_si=xxxx";
+	std::map<std::string, std::string> elements = http_utils.parse_URI_encoded_body(body);
+	std::cout << "body element _si=" << elements["_si"];
+
 	
 	return 0;
 }
