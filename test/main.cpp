@@ -1,4 +1,5 @@
 #include "http_utils.h"
+#include <regex>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -35,6 +36,16 @@ int main(void)
 	std::map<std::string, std::string> elements = http_utils.parse_URI_encoded_body(body);
 	std::cout << "body element _si=" << elements["_si"];
 
-	
+	// regex replace test
+	std::string in {"first-name=Paulo&last-name=Gouveia&email=a%21e.com&password=%221234567890"};
+	std::regex pat {"%22"};
+	std::string format {"\""};
+	std::cout << "\nregex replace: " << std::regex_replace(in, pat, format);
+
+	std::map<std::string, std::string> elems = http_utils.parse_URI_encoded_body(in);
+	std::cout << "\nfirst-name:" << elems["first-name"] << "\n";
+	std::cout << "email:" << elems["email"] << "\n";
+	std::cout << "pwd:" << elems["password"] << "\n";
+
 	return 0;
 }
